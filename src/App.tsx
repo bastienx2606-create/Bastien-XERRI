@@ -247,6 +247,27 @@ export default function App() {
               ))}
             </div>
           </ProfessionalCard>
+
+          <ProfessionalCard className="bg-slate-50/50 border-dashed">
+            <SectionTitle>EXPÉRIENCES COMPLÉMENTAIRES</SectionTitle>
+            <p className="text-[10px] text-slate-400 mb-4 italic leading-tight">
+              Expériences terrain valorisant l'autonomie, la fiabilité et le sens du service.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+              {CV_DATA.complementaryExperiences.map((exp, idx) => (
+                <div key={idx} className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm hover:border-blue-200 transition-colors">
+                  <h4 className="text-[11px] font-bold text-slate-900 uppercase tracking-tight">{exp.role}</h4>
+                  <p className="text-[9px] font-bold text-blue-600 mb-1.5 uppercase tracking-tighter">{exp.company}</p>
+                  <p className="text-[9px] text-slate-500 leading-tight italic line-clamp-2 mb-2">{exp.description}</p>
+                  <div className="flex flex-wrap gap-1 mt-auto">
+                    {exp.skills.map(s => (
+                      <span key={s} className="text-[7px] font-bold px-1.5 py-0.5 bg-slate-50 text-slate-400 rounded uppercase border border-slate-100">{s}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ProfessionalCard>
         </div>
 
         {/* Right Column (3/12) */}

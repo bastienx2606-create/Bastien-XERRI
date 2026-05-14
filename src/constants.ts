@@ -48,6 +48,26 @@ export const CV_DATA = {
       skills: ["Marketing digital", "Réseaux sociaux", "Veille concurrentielle"],
     },
   ],
+  complementaryExperiences: [
+    {
+      role: "Voiturier",
+      company: "ECTOR",
+      description: "Accueil client, gestion et stationnement des véhicules. Ponctualité, rigueur et sens du service.",
+      skills: ["Service Client", "Rigueur", "Responsabilité"]
+    },
+    {
+      role: "Livreur de pizza",
+      company: "Domino’s Pizza",
+      description: "Livraison de commandes, respect des délais et gestion des flux. Contact client et encaissement.",
+      skills: ["Ponctualité", "Relation Client", "Gestion du stress"]
+    },
+    {
+      role: "Chauffeur-livreur",
+      company: "Stra Service",
+      description: "Préparation et livraison de commandes, organisation de tournées. Autonomie et fiabilité.",
+      skills: ["Organisation", "Autonomie", "Fiabilité"]
+    }
+  ],
   education: [
     {
       degree: "MBA Stratégie Digitale",
