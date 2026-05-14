@@ -190,13 +190,13 @@ export default function App() {
             </div>
 
             {/* Langues */}
-            <div className="mt-6 pt-4 border-t border-slate-100">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Langues</p>
+            <div className="mt-6 -mx-6 -mb-6 p-6 bg-blue-600 rounded-b-xl text-white">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-blue-200 mb-4">Langues</p>
               <div className="space-y-3">
                 {CV_DATA.languages.map((lang) => (
                   <div key={lang.name} className="flex justify-between items-center">
-                    <span className="text-xs font-medium text-slate-700">{lang.name}</span>
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-600 text-white uppercase tracking-tighter">
+                    <span className="text-xs font-bold">{lang.name}</span>
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-white text-blue-600 uppercase tracking-tighter">
                       {lang.level.toUpperCase()}
                     </span>
                   </div>
