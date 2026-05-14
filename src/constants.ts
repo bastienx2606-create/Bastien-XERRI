@@ -133,7 +133,7 @@ export const CV_DATA = {
           title: "Centre International d’Antibes",
           period: "Août 2025 - aujourd’hui",
           link: "https://www.instagram.com/centre_international_antibes/",
-          description: "Participation à la gestion et à la coordination des réseaux sociaux du Centre International d’Antibes, création et suivi de contenus, développement de l’engagement client et valorisation de l’image de marque.",
+          description: "Gestion complète et autonome des réseaux sociaux du Centre International d’Antibes : création et suivi de contenus, développement de l’engagement client et valorisation de l’image de marque.",
           buttonText: "Voir Instagram"
         }
       ]
