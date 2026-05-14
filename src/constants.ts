@@ -64,18 +64,18 @@ export const CV_DATA = {
       info: "Développement Territorial par le Sport — Gestion d'équipes, développement de projets, dynamisation de territoire.",
     },
     {
-      degree: "Licence Management du Sport",
-      school: "IAE / STAPS Nice",
-      period: "2023",
-      status: "Diplôme obtenu",
-      info: "Gestion, marketing et événementiel sportif.",
-    },
-    {
       degree: "Licence Pro Santé & Activités Physiques Adaptées",
       school: "Université de Nice",
-      period: "2022",
+      period: "2023",
       status: "Diplôme obtenu",
       info: "Spécialisation Santé, Vieillissement et Activités Physiques Adaptées.",
+    },
+    {
+      degree: "Licence Management du Sport",
+      school: "IAE / STAPS Nice",
+      period: "2022",
+      status: "Diplôme obtenu",
+      info: "Gestion, marketing et événementiel sportif.",
     },
   ],
   skillGroups: [
