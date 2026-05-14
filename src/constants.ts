@@ -19,6 +19,14 @@ export const CV_DATA = {
       skills: ["HTML", "Brevo CRM", "SEO", "Réseaux sociaux"],
     },
     {
+      role: "Gestionnaire Web & Suivi Opérationnel",
+      company: "Christine Petit Locations — Indépendant",
+      period: "2024 - Présent",
+      description: "Gestion complète de l'écosystème web et suivi opérationnel des réservations. Optimisation de la visibilité en ligne et maintenance technique du site vitrine.",
+      skills: ["Gestion Web", "Suivi Opérationnel", "Vercel"],
+      link: "https://christinepetitlocations.vercel.app/"
+    },
+    {
       role: "Assistant Chef de Projet Web",
       company: "Mouratoglou Academy — Stage",
       period: "Janv. 2025 - Juil. 2025",
@@ -45,13 +53,29 @@ export const CV_DATA = {
       degree: "MBA Stratégie Digitale",
       school: "Studi",
       period: "2025 - 2027",
+      status: "En cours",
       info: "Spécialisation en stratégie digitale, webmarketing et e-commerce.",
     },
     {
       degree: "Master Management du Sport",
       school: "IAE / STAPS Nice",
       period: "2025",
+      status: "Diplôme obtenu",
       info: "Développement Territorial par le Sport — Gestion d'équipes, développement de projets, dynamisation de territoire.",
+    },
+    {
+      degree: "Licence Management du Sport",
+      school: "IAE / STAPS Nice",
+      period: "2023",
+      status: "Diplôme obtenu",
+      info: "Gestion, marketing et événementiel sportif.",
+    },
+    {
+      degree: "Licence Pro Santé & Activités Physiques Adaptées",
+      school: "Université de Nice",
+      period: "2022",
+      status: "Diplôme obtenu",
+      info: "Spécialisation Santé, Vieillissement et Activités Physiques Adaptées.",
     },
   ],
   skillGroups: [

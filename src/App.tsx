@@ -15,6 +15,10 @@ import {
   Menu, 
   X,
   Send,
+  Globe,
+  Award,
+  BookOpen,
+  GraduationCap
 } from 'lucide-react';
 import { CV_DATA } from './constants';
 
@@ -225,6 +229,19 @@ export default function App() {
                       </li>
                     ))}
                   </ul>
+                  {exp.link && (
+                    <div className="mt-3">
+                      <a 
+                        href={exp.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-[10px] font-bold text-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all group"
+                      >
+                        <Globe size={12} className="group-hover:rotate-12 transition-transform" />
+                        VOIR LE SITE
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -273,13 +290,21 @@ export default function App() {
             <SectionTitle>Formation</SectionTitle>
             <div className="space-y-6 mt-4">
               {CV_DATA.education.map((edu, idx) => (
-                <div key={idx} className={`pl-3 border-l-2 ${idx === 0 ? 'border-blue-600' : 'border-slate-200'}`}>
-                  <p className={`text-[10px] font-bold ${idx === 0 ? 'text-blue-600' : 'text-slate-400'}`}>
-                    {edu.period}
-                  </p>
-                  <h4 className="text-xs font-bold text-slate-900 mt-0.5">{edu.degree}</h4>
+                <div key={idx} className={`pl-3 border-l-2 relative ${idx === 0 ? 'border-blue-600' : 'border-slate-200'}`}>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className={`text-[10px] font-bold ${idx === 0 ? 'text-blue-600' : 'text-slate-400'}`}>
+                        {edu.period}
+                      </p>
+                      <h4 className="text-xs font-bold text-slate-900 mt-0.5">{edu.degree}</h4>
+                    </div>
+                    <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-tighter ${edu.status === 'Diplôme obtenu' ? 'bg-green-50 text-green-600 border border-green-100' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}>
+                      {edu.status === 'Diplôme obtenu' ? <Award size={10} /> : <BookOpen size={10} />}
+                      {edu.status}
+                    </div>
+                  </div>
                   <p className="text-[10px] text-slate-500 italic mt-0.5">{edu.school}</p>
-                  <p className="text-[10px] text-slate-400 mt-1">{edu.info}</p>
+                  <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">{edu.info}</p>
                 </div>
               ))}
             </div>
