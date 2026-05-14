@@ -72,7 +72,9 @@ export default function App() {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold tracking-tight uppercase text-slate-900">{CV_DATA.profile.fullName}</h1>
-              <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">{CV_DATA.profile.title}</p>
+              {CV_DATA.profile.title && (
+                <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">{CV_DATA.profile.title}</p>
+              )}
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 export const CV_DATA = {
   profile: {
     fullName: "Bastien Xerri",
-    title: "Alternant Webmarketing & E-commerce",
+    title: "",
     catchphrase: "Passionné par le digital, je mets mes compétences en webmarketing et gestion de projet au service du développement des marques.",
     about: "Titulaire d'un Master en Management du Sport, je poursuis actuellement un MBA en Stratégie Digitale. Fort de premières expériences en webmarketing, gestion de projet, SEO, CRM et création de contenus, je souhaite mettre mes compétences au service d'une marque forte et de son développement digital.",
     email: "bastienx2606@gmail.com",
