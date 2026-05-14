@@ -18,12 +18,14 @@ import {
   Globe,
   Award,
   BookOpen,
-  GraduationCap
+  GraduationCap,
+  Instagram
 } from 'lucide-react';
 import { CV_DATA } from './constants';
 
-const ProfessionalCard = ({ children, className = "", dark = false, accent = false }: { children: React.ReactNode, className?: string, dark?: boolean, accent?: boolean }) => (
+const ProfessionalCard = ({ children, className = "", dark = false, accent = false, id = "" }: { children: React.ReactNode, className?: string, dark?: boolean, accent?: boolean, id?: string }) => (
   <motion.div 
+    id={id}
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -58,13 +60,14 @@ export default function App() {
 
   const navLinks = [
     { name: "Profil", href: "#profile" },
-    { name: "Réalisations", href: "#projects" },
+    { name: "Expériences", href: "#experience" },
+    { name: "Réalisations", href: "#realisations" },
   ];
 
   const initials = CV_DATA.profile.fullName.split(' ').map(n => n[0]).join('');
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-600">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-600 scroll-smooth">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled ? 'bg-white/90 backdrop-blur-md py-3 border-slate-200 shadow-sm' : 'bg-white py-4 border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
@@ -129,8 +132,8 @@ export default function App() {
         </AnimatePresence>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto w-full px-6 md:px-8 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      {/* Main Content Grid */}
+      <main className="max-w-7xl mx-auto w-full px-6 md:px-8 pt-32 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* Left Column (4/12) */}
         <div id="profile" className="lg:col-span-4 flex flex-col gap-6">
@@ -244,24 +247,6 @@ export default function App() {
               ))}
             </div>
           </ProfessionalCard>
-
-          <ProfessionalCard accent id="projects">
-            <SectionTitle light>Réalisations &amp; Projets</SectionTitle>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-              {CV_DATA.projects.map((project, idx) => (
-                <div key={idx} className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10 group cursor-pointer hover:bg-white/20 transition-all">
-                  <p className="text-[9px] font-bold text-blue-200 mb-1 uppercase tracking-widest">{project.tags[0]}</p>
-                  <h4 className="text-xs font-bold text-white mb-2 flex items-center justify-between">
-                    {project.title}
-                    <ExternalLink size={10} className="opacity-50 group-hover:opacity-100 transition-opacity" />
-                  </h4>
-                  <p className="text-[10px] text-blue-100 leading-tight opacity-80 italic line-clamp-2">
-                    {project.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ProfessionalCard>
         </div>
 
         {/* Right Column (3/12) */}
@@ -307,11 +292,52 @@ export default function App() {
               ))}
             </div>
           </ProfessionalCard>
-
         </div>
       </main>
 
+      {/* New Full Width Realisations Section */}
+      <section id="realisations" className="max-w-7xl mx-auto w-full px-6 md:px-8 pb-24 scroll-mt-24">
+        <div className="text-center mb-12">
+          <SectionTitle>Réalisations</SectionTitle>
+          <h3 className="text-3xl font-bold text-slate-900 mt-4 italic tracking-tight uppercase">Projets digitaux &amp; réalisations web</h3>
+        </div>
 
+        <div className="space-y-12">
+          {CV_DATA.realisations.map((category, catIdx) => (
+            <div key={catIdx}>
+              <h4 className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em] mb-6 border-b border-blue-100 pb-2 flex items-center gap-3">
+                <span className="w-8 h-[1px] bg-blue-600"></span>
+                {category.category}
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.projects.map((project, pIdx) => (
+                  <ProfessionalCard key={pIdx} className="hover:border-blue-600/30 transition-colors group">
+                    <div className="flex flex-col h-full">
+                      <div className="flex justify-between items-start mb-4">
+                        <h5 className="text-sm font-bold text-slate-900 uppercase tracking-tight">{project.title}</h5>
+                        {project.period && <span className="text-[9px] font-bold text-slate-400 italic">{project.period}</span>}
+                      </div>
+                      <p className="text-[11px] text-slate-600 leading-relaxed mb-6 flex-1 italic">
+                        {project.description}
+                      </p>
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-slate-900 text-white rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-blue-600 hover:shadow-lg transition-all group/btn"
+                      >
+                        {project.buttonText === 'Voir Instagram' ? <Instagram size={14} /> : <Globe size={14} />}
+                        {project.buttonText}
+                        <ExternalLink size={10} className="opacity-50 group-hover/btn:translate-x-0.5 transition-transform" />
+                      </a>
+                    </div>
+                  </ProfessionalCard>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-slate-100 px-8 py-6 text-[10px] text-slate-400 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-slate-200">
@@ -321,4 +347,3 @@ export default function App() {
     </div>
   );
 }
-

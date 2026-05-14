@@ -3,7 +3,7 @@ export const CV_DATA = {
     fullName: "Bastien Xerri",
     title: "",
     catchphrase: "Passionné par le digital, je mets mes compétences en webmarketing et gestion de projet au service du développement des marques.",
-    about: "Titulaire d'un Master en Management du Sport, je poursuis actuellement un MBA en Stratégie Digitale. Fort de premières expériences en webmarketing, gestion de projet, SEO, CRM et création de contenus, je souhaite mettre mes compétences au service d'une marque forte et de son développement digital.",
+    about: "Titulaire d'un Master en Management du Sport, je poursuis actuellement un MBA en Stratégie Digitale. Fort de premières expériences en webmarketing, gestion de projet, SEO, CRM et création de contenus, je souhaite mettre mes compétences au service d'une marque forte and de son développement digital.",
     email: "bastienx2606@gmail.com",
     phone: "06 99 72 20 74",
     linkedin: "https://linkedin.com/in/bastien-xerri",
@@ -102,34 +102,41 @@ export const CV_DATA = {
   ],
   permits: ["Permis B", "A1 (125)", "Permis côtier"],
   interests: ["Football", "Padel", "Tennis"],
-  projects: [
+  realisations: [
     {
-      title: "Campagnes Emailing CRM",
-      description: "Gestion et envoi de campagnes emailing via Brevo CRM au Centre International d'Antibes — suivi des KPIs et optimisation du taux d'ouverture.",
-      tags: ["Brevo CRM", "Email Marketing", "KPIs"],
-      image: "",
-      link: "#",
+      category: "Gestion de sites internet",
+      projects: [
+        {
+          title: "Centre International d’Antibes",
+          link: "https://www.cia-france.fr/",
+          description: "Participation à la gestion et à la mise à jour du site internet, intégration de contenus, suivi des informations et amélioration de la visibilité en ligne.",
+          buttonText: "Voir le site"
+        },
+        {
+          title: "Mouratoglou Academy",
+          link: "https://www.mouratoglou.com/",
+          description: "Participation à des missions webmarketing, intégration de contenus, optimisation SEO et amélioration de l’expérience digitale.",
+          buttonText: "Voir le site"
+        },
+        {
+          title: "CP Locations",
+          link: "https://christinepetitlocations.vercel.app/",
+          description: "Gestion indépendante du site internet, suivi des réservations, consultation du calendrier des disponibilités et mise à jour des informations opérationnelles.",
+          buttonText: "Voir le site"
+        }
+      ]
     },
     {
-      title: "Déploiement SVI Mouratoglou",
-      description: "Pilotage du projet de déploiement d'un Serveur Vocal Interactif pour le call center de la Mouratoglou Academy — coordination des équipes et suivi des délais.",
-      tags: ["Gestion de projet", "SVI", "WordPress"],
-      image: "",
-      link: "#",
-    },
-    {
-      title: "Optimisation SEO & Classement Google",
-      description: "Amélioration du référencement naturel et du positionnement Google pour la Mouratoglou Academy — intégration de contenus optimisés.",
-      tags: ["SEO", "WordPress", "HTML"],
-      image: "",
-      link: "#",
-    },
-    {
-      title: "Avis Clients LEFIVE & 4PADEL",
-      description: "Pilotage d'un projet d'optimisation des avis clients Google pour les centres sportifs LEFIVE et 4PADEL — création de contenus et veille concurrentielle.",
-      tags: ["Marketing digital", "Réseaux sociaux"],
-      image: "",
-      link: "#",
-    },
-  ],
+      category: "Gestion des réseaux sociaux",
+      projects: [
+        {
+          title: "Centre International d’Antibes",
+          period: "Août 2025 - aujourd’hui",
+          link: "https://www.instagram.com/centre_international_antibes/",
+          description: "Participation à la gestion et à la coordination des réseaux sociaux du Centre International d’Antibes, création et suivi de contenus, développement de l’engagement client et valorisation de l’image de marque.",
+          buttonText: "Voir Instagram"
+        }
+      ]
+    }
+  ]
 };
