@@ -22,7 +22,7 @@ export const CV_DATA = {
       role: "Gestionnaire Opérationnel Web & Locations",
       company: "CP Locations — Indépendant / Freelance",
       period: "Juin 2025 - Présent",
-      description: "Dans le cadre d'une activité indépendante, je participe à la gestion opérationnelle du site CP Locations, dédié à la location de logements en Martinique. Suivi des réservations des logements. Consultation et mise à jour du calendrier des réservations. Suivi des disponibilités et organisation des plannings de nettoyage. Suivi des maintenances, réparations et remplacements. Gestion des paiements et de la facturation. Mise à jour des informations sur le site et centralisation opérationnelle.",
+      description: "Dans le cadre d'une activité indépendante, je participe à la gestion opérationnelle du site CP Locations, dédié à la location de logements en Martinique. Suivi des réservations des logements. Consultation et mise à jour du calendrier des réservations. Suivi des disponibilités et organisation des plannings de nettoyage. Suivi des maintenances, réparations et remplacements. Gestion des paiements via Stripe et de la facturation. Mise à jour des informations sur le site et centralisation opérationnelle.",
       skills: ["Suivi Réservations", "Gestion de Calendrier", "Logistique"],
       link: "https://christinepetitlocations.vercel.app/"
     },
