@@ -6,22 +6,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Download, 
   Mail, 
   Phone, 
   Linkedin, 
   MapPin, 
   ExternalLink, 
-  Github, 
   ChevronRight, 
   Menu, 
   X,
-  Briefcase,
-  GraduationCap,
-  Globe,
   Send,
-  Zap,
-  Code
 } from 'lucide-react';
 import { CV_DATA } from './constants';
 
@@ -62,7 +55,7 @@ export default function App() {
   const navLinks = [
     { name: "Profil", href: "#profile" },
     { name: "Expériences", href: "#experience" },
-    { name: "Projets", href: "#projects" },
+    { name: "Réalisations", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -92,9 +85,12 @@ export default function App() {
               ))}
             </div>
             <div className="flex gap-3">
-              <button className="px-4 py-2 bg-slate-900 text-white text-[10px] font-bold rounded shadow-sm hover:bg-slate-800 transition-all uppercase tracking-tight">
-                TÉLÉCHARGER CV
-              </button>
+              <a
+                href="mailto:bastienx2606@gmail.com"
+                className="px-4 py-2 bg-slate-900 text-white text-[10px] font-bold rounded shadow-sm hover:bg-slate-800 transition-all uppercase tracking-tight"
+              >
+                CONTACT EMAIL
+              </a>
             </div>
           </nav>
 
@@ -149,18 +145,42 @@ export default function App() {
             </p>
             <div className="space-y-4">
               {[
-                { icon: <Mail size={14} />, text: CV_DATA.profile.email },
-                { icon: <Phone size={14} />, text: CV_DATA.profile.phone },
-                { icon: <Linkedin size={14} />, text: "LinkedIn Profile" },
-                { icon: <MapPin size={14} />, text: CV_DATA.profile.location },
+                { icon: <Mail size={14} />, text: CV_DATA.profile.email, href: `mailto:${CV_DATA.profile.email}` },
+                { icon: <Phone size={14} />, text: CV_DATA.profile.phone, href: `tel:${CV_DATA.profile.phone.replace(/\s/g, '')}` },
+                { icon: <Linkedin size={14} />, text: "Profil LinkedIn", href: CV_DATA.profile.linkedin },
+                { icon: <MapPin size={14} />, text: CV_DATA.profile.location, href: undefined },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-xs text-slate-500">
                   <span className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 border border-slate-100">
                     {item.icon}
                   </span>
-                  {item.text}
+                  {item.href ? (
+                    <a href={item.href} className="hover:text-blue-600 transition-colors">{item.text}</a>
+                  ) : (
+                    <span>{item.text}</span>
+                  )}
                 </div>
               ))}
+            </div>
+
+            {/* Permis */}
+            <div className="mt-6 pt-4 border-t border-slate-100">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Permis</p>
+              <div className="flex flex-wrap gap-1.5">
+                {CV_DATA.permits.map((p) => (
+                  <span key={p} className="px-2 py-1 bg-slate-50 border border-slate-100 text-[9px] font-bold rounded text-slate-600 uppercase tracking-tighter">{p}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Centres d'intérêt */}
+            <div className="mt-4">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Centres d'intérêt</p>
+              <div className="flex flex-wrap gap-1.5">
+                {CV_DATA.interests.map((i) => (
+                  <span key={i} className="px-2 py-1 bg-blue-50 border border-blue-100 text-[9px] font-bold rounded text-blue-600 uppercase tracking-tighter">{i}</span>
+                ))}
+              </div>
             </div>
           </ProfessionalCard>
 
@@ -189,7 +209,7 @@ export default function App() {
                   <div className={`absolute -left-[9px] top-0 w-4 h-4 bg-white border-2 rounded-full ${idx === 0 ? 'border-blue-600' : 'border-slate-300'}`}></div>
                   <div className="flex justify-between text-[10px] font-bold text-blue-600 mb-1 uppercase tracking-tighter">
                     <span>{exp.period}</span>
-                    <span className="text-slate-400">PARIS</span>
+                    <span className="text-slate-400">CÔTE D'AZUR</span>
                   </div>
                   <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">{exp.role}</h3>
                   <p className="text-xs font-semibold text-slate-500 mb-2 italic">{exp.company}</p>
@@ -207,7 +227,7 @@ export default function App() {
           </ProfessionalCard>
 
           <ProfessionalCard accent id="projects">
-            <SectionTitle light>Réalisations Phares</SectionTitle>
+            <SectionTitle light>Réalisations &amp; Projets</SectionTitle>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
               {CV_DATA.projects.map((project, idx) => (
                 <div key={idx} className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10 group cursor-pointer hover:bg-white/20 transition-all">
@@ -255,6 +275,7 @@ export default function App() {
                   </p>
                   <h4 className="text-xs font-bold text-slate-900 mt-0.5">{edu.degree}</h4>
                   <p className="text-[10px] text-slate-500 italic mt-0.5">{edu.school}</p>
+                  <p className="text-[10px] text-slate-400 mt-1">{edu.info}</p>
                 </div>
               ))}
             </div>
@@ -276,6 +297,13 @@ export default function App() {
            <div className="text-center mb-16">
               <SectionTitle>TRAVAILLONS ENSEMBLE</SectionTitle>
               <h3 className="text-3xl font-bold text-slate-900 mt-4 italic tracking-tight">Démarrez une conversation aujourd'hui</h3>
+              <p className="text-slate-500 text-sm mt-3">
+                Contactez-moi par email à{' '}
+                <a href="mailto:bastienx2606@gmail.com" className="text-blue-600 font-semibold hover:underline">
+                  bastienx2606@gmail.com
+                </a>{' '}
+                ou au <a href="tel:0699722074" className="text-blue-600 font-semibold hover:underline">06 99 72 20 74</a>
+              </p>
            </div>
            
            <ProfessionalCard className="max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
@@ -288,16 +316,19 @@ export default function App() {
                    </div>
                    <div className="space-y-2">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email</label>
-                      <input type="email" className="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all" placeholder="jean.dupont@email.com" />
+                      <input type="email" className="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all" placeholder="votre@email.com" />
                    </div>
                 </div>
                 <div className="space-y-2">
                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Message</label>
-                   <textarea rows={4} className="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all resize-none" placeholder="Comment puis-je vous aider ?" />
+                   <textarea rows={4} className="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all resize-none" placeholder="Votre message..." />
                 </div>
-                <button className="w-full bg-slate-900 text-white py-4 rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-black hover:shadow-xl transition-all group">
-                  Envoyer le message <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
+                <a
+                  href="mailto:bastienx2606@gmail.com"
+                  className="w-full bg-slate-900 text-white py-4 rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-black hover:shadow-xl transition-all group"
+                >
+                  Envoyer un email <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </a>
              </form>
            </ProfessionalCard>
         </div>
@@ -305,8 +336,8 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-slate-100 px-8 py-6 text-[10px] text-slate-400 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-slate-200">
-        <p className="uppercase font-bold tracking-tight">© 2026 {CV_DATA.profile.fullName} — PORTFOLIO PERSONNEL PREMIUM</p>
-        <p className="uppercase font-bold text-blue-600 tracking-widest">DISPONIBLE POUR NOUVEAUX DÉFIS INTERNATIONAUX</p>
+        <p className="uppercase font-bold tracking-tight">© 2026 {CV_DATA.profile.fullName} — CV DIGITAL</p>
+        <p className="uppercase font-bold text-blue-600 tracking-widest">OUVERT AUX OPPORTUNITÉS EN ALTERNANCE &amp; STAGE</p>
       </footer>
     </div>
   );
