@@ -154,7 +154,6 @@ export default function App() {
               {[
                 { icon: <Mail size={14} />, text: CV_DATA.profile.email, href: `mailto:${CV_DATA.profile.email}` },
                 { icon: <Phone size={14} />, text: CV_DATA.profile.phone, href: `tel:${CV_DATA.profile.phone.replace(/\s/g, '')}` },
-                { icon: <Linkedin size={14} />, text: "Profil LinkedIn", href: CV_DATA.profile.linkedin },
                 { icon: <MapPin size={14} />, text: CV_DATA.profile.location, href: undefined },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-xs text-slate-500">

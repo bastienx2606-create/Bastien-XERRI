@@ -6,7 +6,6 @@ export const CV_DATA = {
     about: "Titulaire d'un Master en Management du Sport, je poursuis actuellement un MBA en Stratégie Digitale. Fort de premières expériences en webmarketing, gestion de projet, SEO, CRM et création de contenus, je souhaite mettre mes compétences au service d'une marque forte and de son développement digital.",
     email: "bastienx2606@gmail.com",
     phone: "06 99 72 20 74",
-    linkedin: "https://linkedin.com/in/bastien-xerri",
     location: "92160 - Antony",
     profilePic: "/profile.jpg",
   },
