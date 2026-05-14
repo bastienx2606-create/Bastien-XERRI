@@ -8,7 +8,7 @@ export const CV_DATA = {
     phone: "06 99 72 20 74",
     linkedin: "https://linkedin.com/in/bastien-xerri",
     location: "92160 - Antony",
-    profilePic: "https://picsum.photos/seed/bastien/800/800",
+    profilePic: "/profile.jpg",
   },
   experiences: [
     {
