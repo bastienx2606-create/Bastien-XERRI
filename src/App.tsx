@@ -174,7 +174,7 @@ export default function App() {
             </div>
 
             {/* Centres d'intérêt */}
-            <div className="mt-4">
+            <div className="mt-4 mb-6">
               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Centres d'intérêt</p>
               <div className="flex flex-wrap gap-1.5">
                 {CV_DATA.interests.map((i) => (
@@ -182,21 +182,23 @@ export default function App() {
                 ))}
               </div>
             </div>
-          </ProfessionalCard>
 
-          <ProfessionalCard dark>
-            <SectionTitle light>Langues</SectionTitle>
-            <div className="space-y-5">
-              {CV_DATA.languages.map((lang) => (
-                <div key={lang.name} className="flex justify-between items-center">
-                  <span className="text-sm font-medium">{lang.name}</span>
-                  <span className={`text-[9px] font-bold px-2 py-0.5 rounded border ${lang.name === 'Français' ? 'bg-blue-600 border-blue-500' : 'border-slate-700'}`}>
-                    {lang.level.toUpperCase()}
-                  </span>
-                </div>
-              ))}
+            {/* Langues */}
+            <div className="mt-6 pt-4 border-t border-slate-100">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-4">Langues</p>
+              <div className="space-y-3">
+                {CV_DATA.languages.map((lang) => (
+                  <div key={lang.name} className="flex justify-between items-center">
+                    <span className="text-xs font-medium text-slate-700">{lang.name}</span>
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded border border-slate-200 text-slate-500 uppercase tracking-tighter">
+                      {lang.level.toUpperCase()}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </ProfessionalCard>
+
         </div>
 
         {/* Center Column (5/12) */}

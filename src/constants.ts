@@ -7,7 +7,7 @@ export const CV_DATA = {
     email: "bastienx2606@gmail.com",
     phone: "06 99 72 20 74",
     linkedin: "https://linkedin.com/in/bastien-xerri",
-    location: "Antibes, France",
+    location: "92160 - Antony",
     profilePic: "https://picsum.photos/seed/bastien/800/800",
   },
   experiences: [
