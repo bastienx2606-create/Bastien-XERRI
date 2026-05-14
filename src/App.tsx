@@ -139,7 +139,7 @@ export default function App() {
               <img 
                 src={CV_DATA.profile.profilePic} 
                 alt={CV_DATA.profile.fullName} 
-                className="w-full h-full object-cover grayscale brightness-105"
+                className="w-full h-full object-cover brightness-105"
                 referrerPolicy="no-referrer"
               />
             </div>
