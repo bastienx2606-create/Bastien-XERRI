@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary: #0f172a;
+  --color-accent: #2563eb;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-blue-600: #2563eb;
+  --color-blue-400: #60a5fa;
+  --color-blue-200: #bfdbfe;
+  --color-blue-100: #dbeafe;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-slate-800 bg-slate-50 antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans tracking-tight;
+  }
+}
+
+.card-polish {
+  @apply bg-white p-6 rounded-xl border border-slate-200 shadow-sm transition-all duration-300;
+}
+
+.text-xs-bold-caps {
+  @apply text-[10px] font-bold uppercase tracking-widest;
+}
+
+.border-accent-l {
+  @apply border-l-4 border-blue-600 pl-3;
+}
