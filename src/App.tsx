@@ -58,7 +58,6 @@ export default function App() {
 
   const navLinks = [
     { name: "Profil", href: "#profile" },
-    { name: "Expériences", href: "#experience" },
     { name: "Réalisations", href: "#projects" },
   ];
 
