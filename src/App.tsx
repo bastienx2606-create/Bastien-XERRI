@@ -196,7 +196,7 @@ export default function App() {
                 {CV_DATA.languages.map((lang) => (
                   <div key={lang.name} className="flex justify-between items-center">
                     <span className="text-xs font-medium text-slate-700">{lang.name}</span>
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded border border-slate-200 text-slate-500 uppercase tracking-tighter">
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-600 text-white uppercase tracking-tighter">
                       {lang.level.toUpperCase()}
                     </span>
                   </div>
