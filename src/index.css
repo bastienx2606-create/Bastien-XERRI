@@ -49,3 +49,19 @@
 .border-accent-l {
   @apply border-l-4 border-blue-600 pl-3;
 }
+
+@media print {
+  header, footer {
+    display: none !important;
+  }
+  body, main {
+    background-color: white !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
