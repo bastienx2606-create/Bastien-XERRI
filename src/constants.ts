@@ -3,7 +3,7 @@ export const CV_DATA = {
     fullName: "Bastien Xerri",
     title: "",
     catchphrase: "Passionné par le digital, je mets mes compétences en webmarketing et gestion de projet au service du développement des marques.",
-    about: "Titulaire d'un Master en Management du Sport, je poursuis actuellement un MBA en Stratégie Digitale. Fort de premières expériences en webmarketing, gestion de projet, SEO, CRM et création de contenus, je souhaite mettre mes compétences au service d'une marque forte and de son développement digital.",
+    about: "Titulaire d'un Master en Management du Sport et actuellement en MBA Stratégie Digitale, je possède un profil polyvalent et transversal. Mes expériences variées m'ont permis de développer de solides compétences en gestion de projet, webmarketing et management d'équipe. Autonome, rigoureux et doté d'un bon relationnel, je m'adapte rapidement aux nouveaux défis pour accompagner le développement des projets qui me sont confiés.",
     email: "bastienx2606@gmail.com",
     phone: "06 99 72 20 74",
     location: "92160 - Antony",
