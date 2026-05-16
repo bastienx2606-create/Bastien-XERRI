@@ -19,7 +19,8 @@ import {
   Award,
   BookOpen,
   GraduationCap,
-  Instagram
+  Instagram,
+  Download
 } from 'lucide-react';
 import { CV_DATA } from './constants';
 
@@ -93,6 +94,14 @@ export default function App() {
             </div>
             <div className="flex gap-3">
               <a
+                href="/CV_Bastien_Xerri.pdf"
+                download="CV_Bastien_Xerri.pdf"
+                className="px-4 py-2 bg-blue-600 text-white text-[10px] font-bold rounded shadow-sm hover:bg-blue-700 transition-all uppercase tracking-tight flex items-center gap-2"
+              >
+                <Download size={12} />
+                TÉLÉCHARGER CV
+              </a>
+              <a
                 href="mailto:bastienx2606@gmail.com"
                 className="px-4 py-2 bg-slate-900 text-white text-[10px] font-bold rounded shadow-sm hover:bg-slate-800 transition-all uppercase tracking-tight"
               >
@@ -126,6 +135,22 @@ export default function App() {
                     {link.name}
                   </a>
                 ))}
+                <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                  <a
+                    href="/CV_Bastien_Xerri.pdf"
+                    download="CV_Bastien_Xerri.pdf"
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white text-[10px] font-bold rounded shadow-sm hover:bg-blue-700 transition-all uppercase tracking-tight"
+                  >
+                    <Download size={14} />
+                    TÉLÉCHARGER CV
+                  </a>
+                  <a
+                    href="mailto:bastienx2606@gmail.com"
+                    className="flex items-center justify-center gap-2 px-4 py-3 bg-slate-900 text-white text-[10px] font-bold rounded shadow-sm hover:bg-slate-800 transition-all uppercase tracking-tight"
+                  >
+                    CONTACT EMAIL
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

@@ -32,6 +32,7 @@ export const CV_DATA = {
       description: "Gestion de projet : déploiement d'un SVI (Serveur Vocal Interactif) pour call center. Optimisation SEO et amélioration du classement sur Google. Intégration de contenus WordPress. Création de fiches informatives en HTML.",
       skills: ["WordPress", "SEO", "HTML", "Gestion de projet"],
     },
+
     {
       role: "Président",
       company: "KAZUR VIBES EVENTS — Association événementielle",
@@ -48,6 +49,12 @@ export const CV_DATA = {
     },
   ],
   complementaryExperiences: [
+    {
+      role: "Surveillant d'Internat & Animateur",
+      company: "Mouratoglou Academy",
+      description: "Encadrement des internes (missions type BAFA). Organisation et animation d'activités de loisirs et sportives (basket, football). Planification et gestion de mini-tournois de padel pour les jeunes de Fév. 2025 à Déc. 2025.",
+      skills: ["Animation", "Encadrement", "Organisation sportive", "Esprit d'équipe"],
+    },
     {
       role: "Voiturier",
       company: "ECTOR",
